@@ -1,0 +1,9 @@
+for system run:
+ docker exec -it oracle-xe sqlplus sys/YourStrongPassword123@//localhost:1521/XEPDB1 AS SYSDBA
+
+Once logged in as a privileged user (like sys or system), you can see all PDBs by running:
+SHOW CON_NAME;
+SELECT PDB_ID, PDB_NAME, STATUS FROM CDB_PDBS;
+
+for user:
+  docker exec -it oracle-xe sqlplus appuser/AppUserPassword123@//localhost:1521/XEPDB1
